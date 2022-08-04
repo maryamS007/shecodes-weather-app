@@ -1,0 +1,160 @@
+body {
+  font-family: monospace;
+}
+h1,
+h3,
+a,
+h5,
+p {
+  color: aliceblue;
+}
+h1 {
+  font-size: 90px;
+  margin-bottom: 0;
+  text-transform: capitalize;
+  font-weight: bolder;
+  line-height: 1.5;
+  padding: 0;
+  /* text-align: center; */
+}
+h3 {
+  margin-top: -40px;
+  margin-bottom: 0;
+
+  font-weight: bolder;
+  font-size: 83px;
+}
+h5 {
+  margin-top: -13px;
+
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+p {
+  line-height: 2;
+  font-size: 18px;
+  margin-right: 20px;
+
+  padding-left: 0;
+  text-align: center;
+  font-weight: bold;
+}
+button {
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+  border-radius: 20px 4px;
+  border: none;
+  padding: 6px 30px;
+  margin: 20px 0px 20px 15px;
+  transition: all 200ms ease-in-out;
+  display: inline;
+}
+.button {
+  padding: 0px 0px;
+}
+.button:hover {
+  opacity: 0.8;
+}
+
+.degree-link {
+  font-size: 40px;
+  position: relative;
+  top: -30px;
+  left: -30px;
+}
+a:hover {
+  color: aliceblue;
+  opacity: 0.5;
+}
+
+.container.main {
+  background-repeat: no-repeat;
+  border-radius: 20px 8px;
+}
+
+.background-img {
+  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/040/979/original/rain.jpeg?1658228700);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  box-shadow: -5px 5px 50px 5px rgba(0, 0, 0, 0.2);
+  margin-top: 40px;
+}
+.col.main-city {
+  margin-top: 300px;
+}
+.main-city {
+  margin: -10px 16px;
+}
+.box {
+  /* border: solid 2px rgba(0, 0, 0, 0.2); */
+  border: none;
+  border-radius: 20px 4px;
+  padding: 25px 20px 38px 20px;
+  margin: 10px 20px 15px 10px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 200ms ease-in-out;
+}
+.box:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+}
+
+.search-btn {
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+  border-radius: 20px 4px;
+  border: none;
+  padding: 6px 30px;
+  margin: 20px 0px 20px 40px;
+  transition: all 200ms ease-in-out;
+}
+.search-btn:hover {
+  opacity: 0.8;
+}
+.col-8.srch-bar {
+  margin: 0 10px;
+}
+.form-control.mt-3 {
+  padding: 10px 15px;
+  border-radius: 4px 20px;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+}
+.bi.bi-b.rightness-high {
+  transition: all 200ms ease-in-out;
+}
+.box.next-day-2:hover {
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(255, 197, 61) 0%,
+    rgb(255, 94, 7) 90%
+  );
+}
+.box.next-day-1:hover {
+  background: radial-gradient(
+    circle at 50.3% 44.5%,
+    rgb(116, 147, 179) 0%,
+    rgb(62, 83, 104) 100.2%
+  );
+}
+.box.next-day-3:hover {
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(215, 223, 252) 0%,
+    rgb(255, 255, 255) 0%,
+    rgb(215, 223, 252) 84%
+  );
+}
+.box.next-day-4:hover {
+  background: linear-gradient(-225deg, #5d9fff 0%, #b8dcff 48%, #6bbbff 100%);
+}
+.box.next-day-5:hover {
+  background: radial-gradient(
+    circle at 50.3% 44.5%,
+    rgb(116, 147, 179) 0%,
+    rgb(62, 83, 104) 100.2%
+  );
+}
