@@ -30,6 +30,10 @@ h5 {
   font-size: 1.5rem;
   font-weight: 900;
 }
+h6 {
+  text-align: center;
+  color: aliceblue;
+}
 p {
   line-height: 2;
   font-size: 18px;
@@ -157,8 +161,4 @@ a:hover {
     rgb(116, 147, 179) 0%,
     rgb(62, 83, 104) 100.2%
   );
-}
-.github {
-  text-align: center;
-  color: aliceblue;
 }
