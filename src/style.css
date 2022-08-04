@@ -33,6 +33,7 @@ h5 {
 h6 {
   text-align: center;
   color: aliceblue;
+  font-weight: bold;
 }
 p {
   line-height: 2;
@@ -74,6 +75,7 @@ a:hover {
 .container.main {
   background-repeat: no-repeat;
   border-radius: 20px 8px;
+  margin-top: -33px;
 }
 
 .background-img {
