@@ -9,41 +9,49 @@ p {
   color: aliceblue;
 }
 h1 {
-  font-size: 90px;
+  font-size: 80px;
   margin-bottom: 0;
   text-transform: capitalize;
   font-weight: bolder;
-  line-height: 1.5;
+  line-height: 1.5cm;
   padding: 0;
-  /* text-align: center; */
 }
 h3 {
-  margin-top: -40px;
+  margin-top: -5px;
   margin-bottom: 0;
 
   font-weight: bolder;
-  font-size: 83px;
+  font-size: 73px;
 }
 h5 {
-  margin-top: -13px;
+  margin-top: -6px;
 
-  font-size: 1.5rem;
+  font-size: 20px;
   font-weight: 900;
 }
 h6 {
   text-align: center;
-  color: aliceblue;
+  color: black;
   font-weight: bold;
+}
+h6 a {
+  color: black;
+}
+h6 a:hover {
+  color: black;
+  opacity: 0.6;
 }
 p {
   line-height: 2;
   font-size: 18px;
+  font-weight: bolder;
   margin-right: 20px;
 
   padding-left: 0;
   text-align: center;
   font-weight: bold;
 }
+
 button {
   background: rgba(255, 255, 255, 0.9);
   color: black;
@@ -62,7 +70,7 @@ button {
 }
 
 .degree-link {
-  font-size: 40px;
+  font-size: 28px;
   position: relative;
   top: -30px;
   left: -30px;
@@ -77,6 +85,10 @@ a:hover {
   border-radius: 20px 8px;
   margin-top: -33px;
 }
+.weather-app-wrapper {
+  max-width: 1200px;
+  margin: 30px auto;
+}
 
 .background-img {
   background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/040/979/original/rain.jpeg?1658228700);
@@ -87,7 +99,7 @@ a:hover {
   margin-top: 40px;
 }
 .col.main-city {
-  margin-top: 300px;
+  margin-top: 320px;
 }
 .main-city {
   margin: -10px 16px;

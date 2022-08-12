@@ -91,8 +91,8 @@
 //     }
 //   }
 // }
-function showTime() {
-  let now = new Date();
+function formatDate(timestamp) {
+  let now = new Date(timestamp);
   let hours = now.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -110,10 +110,8 @@ function showTime() {
     "Friday",
     "Saturday",
   ];
-  let currentTime = document.querySelector("h5");
-  currentTime.innerHTML = `${weekDays[now.getDay()]}, ${hours}:${minutes} `;
+  return `${weekDays[now.getDay()]}, ${hours}:${minutes} `;
 }
-showTime();
 
 // function showTempC(event) {
 //   event.preventDefault();
@@ -149,6 +147,8 @@ function showDefaultCity(response) {
   let defaulWind = document.querySelector("#wind");
   let wind = response.data.wind.speed;
   defaulWind.innerHTML = wind;
+  let currentTime = document.querySelector("#day-time");
+  currentTime.innerHTML = formatDate(response.data.dt * 1000);
 }
 let apiKey = "6a34c15fe8f83b9dd7c5b4f359fecd50";
 let apiProtocal = "https://api.openweathermap.org/data/2.5/weather?";
@@ -169,6 +169,8 @@ function showTypedCityTemp(response) {
   let defaulWind = document.querySelector("#wind");
   let wind = response.data.wind.speed;
   defaulWind.innerHTML = wind;
+  let currentTime = document.querySelector("#day-time");
+  currentTime.innerHTML = formatDate(response.data.dt * 1000);
 }
 function showTypedCity(event) {
   event.preventDefault();
@@ -200,6 +202,8 @@ function showMainTemp(response) {
   let windElement = response.data.wind.speed;
   let wind = document.querySelector("#wind");
   wind.innerHTML = windElement;
+  let currentTime = document.querySelector("#day-time");
+  currentTime.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 function getCurrentPosition(position) {
