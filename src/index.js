@@ -24,8 +24,9 @@ function showDefaultCity(response) {
   let defaultCity = document.querySelector("#main-city");
   let city = response.data.name;
   defaultCity.innerHTML = city;
+  celciusTemperature = response.data.main.temp;
   let tempElement = document.querySelector("#main-temp");
-  let dafuatlTempC = Math.round(response.data.main.temp);
+  let dafuatlTempC = Math.round(celciusTemperature);
   tempElement.innerHTML = dafuatlTempC;
   let defaultHumidity = document.querySelector("#humidity");
   let humidity = response.data.main.humidity;
@@ -46,7 +47,8 @@ axios.get(apiUrl).then(showDefaultCity);
 
 function showTypedCityTemp(response) {
   let tempElement = document.querySelector("#main-temp");
-  let dafuatlTempC = Math.round(response.data.main.temp);
+  celciusTemperature = response.data.main.temp;
+  let dafuatlTempC = Math.round(celciusTemperature);
   tempElement.innerHTML = dafuatlTempC;
   let defaultHumidity = document.querySelector("#humidity");
   let humidity = response.data.main.humidity;
@@ -56,11 +58,6 @@ function showTypedCityTemp(response) {
   defaulWind.innerHTML = wind;
   let currentTime = document.querySelector("#day-time");
   currentTime.innerHTML = formatDate(response.data.dt * 1000);
-  let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
 }
 function showTypedCity(event) {
   event.preventDefault();
@@ -79,7 +76,8 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", showTypedCity);
 
 function showMainTemp(response) {
-  let tempElement = response.data.main.temp;
+  celciusTemperature = response.data.main.temp;
+  let tempElement = celciusTemperature;
   let mainTemperature = Math.round(tempElement);
   let defaultTemperature = document.querySelector("#main-temp");
   defaultTemperature.innerHTML = mainTemperature;
@@ -111,3 +109,24 @@ function showCurrentPosition() {
 
 let button = document.querySelector("#current-loc");
 button.addEventListener("click", showCurrentPosition);
+
+function showFarenheitTemp(event) {
+  event.preventDefault();
+  let farenheitTemperature = (celciusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#main-temp");
+  celsuiusLink.classList.remove("active");
+  farenheitLink.classList.add("active");
+  temperatureElement.innerHTML = Math.round(farenheitTemperature);
+}
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#main-temp");
+  celsuiusLink.classList.add("active");
+  farenheitLink.classList.remove("active");
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
+}
+let celciusTemperature = null;
+let farenheitLink = document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click", showFarenheitTemp);
+let celsuiusLink = document.querySelector("#celsius-link");
+celsuiusLink.addEventListener("click", displayCelsiusTemperature);

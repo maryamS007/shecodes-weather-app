@@ -75,6 +75,7 @@ button {
   top: -30px;
   left: -30px;
 }
+
 a:hover {
   color: aliceblue;
   opacity: 0.5;
@@ -97,6 +98,13 @@ a:hover {
   border-radius: 8px;
   box-shadow: -5px 5px 50px 5px rgba(0, 0, 0, 0.2);
   margin-top: 40px;
+}
+.main-icon {
+  color: aliceblue;
+  text-align: center;
+  position: relative;
+  top: 259px;
+  right: 170px;
 }
 .col.main-city {
   margin-top: 320px;
@@ -175,4 +183,10 @@ a:hover {
     rgb(116, 147, 179) 0%,
     rgb(62, 83, 104) 100.2%
   );
+}
+.weather-temperature .active {
+  color: aliceblue;
+  opacity: 0.5;
+  text-decoration: none;
+  cursor: default;
 }
