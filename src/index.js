@@ -36,6 +36,13 @@ function showDefaultCity(response) {
   defaulWind.innerHTML = wind;
   let currentTime = document.querySelector("#day-time");
   currentTime.innerHTML = formatDate(response.data.dt * 1000);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  let descriptionElement = document.querySelector("#main-temp-description");
+  descriptionElement.innerHTML = response.data.weather[0].description;
 }
 let apiKey = "6a34c15fe8f83b9dd7c5b4f359fecd50";
 let apiProtocal = "https://api.openweathermap.org/data/2.5/weather?";
@@ -58,6 +65,13 @@ function showTypedCityTemp(response) {
   defaulWind.innerHTML = wind;
   let currentTime = document.querySelector("#day-time");
   currentTime.innerHTML = formatDate(response.data.dt * 1000);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  let descriptionElement = document.querySelector("#main-temp-description");
+  descriptionElement.innerHTML = response.data.weather[0].description;
 }
 function showTypedCity(event) {
   event.preventDefault();
@@ -91,6 +105,13 @@ function showMainTemp(response) {
   wind.innerHTML = windElement;
   let currentTime = document.querySelector("#day-time");
   currentTime.innerHTML = formatDate(response.data.dt * 1000);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  let descriptionElement = document.querySelector("#main-temp-description");
+  descriptionElement.innerHTML = response.data.weather[0].description;
 }
 
 function getCurrentPosition(position) {

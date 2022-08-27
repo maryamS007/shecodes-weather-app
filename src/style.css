@@ -99,15 +99,13 @@ a:hover {
   box-shadow: -5px 5px 50px 5px rgba(0, 0, 0, 0.2);
   margin-top: 40px;
 }
-.main-icon {
+.main-temp-description {
   color: aliceblue;
-  text-align: center;
-  position: relative;
-  top: 259px;
-  right: 170px;
+  font-weight: bold;
+  font-size: large;
 }
 .col.main-city {
-  margin-top: 320px;
+  margin-top: 230px;
 }
 .main-city {
   margin: -10px 16px;
