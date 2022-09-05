@@ -111,7 +111,6 @@ a:hover {
   margin: -10px 16px;
 }
 .box {
-  /* border: solid 2px rgba(0, 0, 0, 0.2); */
   border: none;
   border-radius: 20px 4px;
   padding: 25px 20px 38px 20px;
@@ -121,11 +120,22 @@ a:hover {
   transition: all 200ms ease-in-out;
 }
 .box:hover {
+  background: radial-gradient(
+    circle at 50.3% 44.5%,
+    rgb(116, 147, 179) 0%,
+    rgb(62, 83, 104) 100.2%
+  );
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
 }
-
+.forcast-units a {
+  color: black;
+}
+.forcast-units a:hover {
+  color: black;
+  opacity: 0.6;
+}
 .search-btn {
   background: rgba(255, 255, 255, 0.9);
   color: black;
@@ -150,21 +160,21 @@ a:hover {
 .bi.bi-b.rightness-high {
   transition: all 200ms ease-in-out;
 }
-.box.next-day-2:hover {
+/* .box.next-day-2:hover {
   background: radial-gradient(
     circle at 10% 20%,
     rgb(255, 197, 61) 0%,
     rgb(255, 94, 7) 90%
   );
-}
-.box.next-day-1:hover {
+} */
+/* .box.forcast:hover {
   background: radial-gradient(
     circle at 50.3% 44.5%,
     rgb(116, 147, 179) 0%,
     rgb(62, 83, 104) 100.2%
   );
-}
-.box.next-day-3:hover {
+} */
+/* .box.next-day-3:hover {
   background: radial-gradient(
     circle at 10% 20%,
     rgb(215, 223, 252) 0%,
@@ -181,7 +191,7 @@ a:hover {
     rgb(116, 147, 179) 0%,
     rgb(62, 83, 104) 100.2%
   );
-}
+} */
 .weather-temperature .active {
   color: aliceblue;
   opacity: 0.5;

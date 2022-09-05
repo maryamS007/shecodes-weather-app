@@ -19,6 +19,43 @@ function formatDate(timestamp) {
   ];
   return `${weekDays[now.getDay()]}, ${hours}:${minutes} `;
 }
+function displayForcast() {
+  let forcastElement = document.querySelector("#forcast");
+  let forcastHTML = `<div>`;
+  let days = [
+    "Wednedsay",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+    "Monday",
+  ];
+  days.forEach(function (day) {
+    forcastHTML =
+      forcastHTML +
+      `<div class="box row">
+                  <div class="col-3">
+                    <div id="forcast-day">${day}</div>
+                  </div>
+                  <div class="col-3">
+                    <img src="#" alt="" />
+                  </div>
+                  <div class="col-6">
+                    <span id="max-temp">10°</span>
+                    <span id="min-temp">3°</span>
+                    <span class="forcast-units">
+                      <a href="#" id="forcast-celcius">C</a>|<a
+                        href="#"
+                        id="forcast-farenheit"
+                        >F</a
+                      >
+                    </span>
+                  </div>
+                </div>`;
+  });
+
+  forcastElement.innerHTML = forcastHTML + `</div>`;
+}
 
 function showDefaultCity(response) {
   let defaultCity = document.querySelector("#main-city");
@@ -151,3 +188,5 @@ let farenheitLink = document.querySelector("#farenheit-link");
 farenheitLink.addEventListener("click", showFarenheitTemp);
 let celsuiusLink = document.querySelector("#celsius-link");
 celsuiusLink.addEventListener("click", displayCelsiusTemperature);
+
+displayForcast();
