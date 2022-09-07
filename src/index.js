@@ -19,31 +19,45 @@ function formatDate(timestamp) {
   ];
   return `${weekDays[now.getDay()]}, ${hours}:${minutes} `;
 }
+
+function formatForcastDays(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let daysOfWeek = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
+  return daysOfWeek[day];
+}
+
 function displayForcast(response) {
   console.log(response.data.daily);
-  let forcastElement = document.querySelector("#forcast");
-  let forcastHTML = `<div>`;
-  let days = [
-    "Wednedsay",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-    "Monday",
-  ];
-  days.forEach(function (day) {
-    forcastHTML =
-      forcastHTML +
-      `<div class="box  row">
+  let dailyForecast = response.data.daily;
+  let forecastElement = document.querySelector("#forcast");
+  let forecastHTML = `<div>`;
+
+  dailyForecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="box  row">
                   <div class="col-3">
-                    <div id="forcast-day">${day}</div>
+                    <div id="forcast-day">${formatForcastDays(
+                      forecastDay.dt
+                    )}</div>
+                   
                   </div>
-                  <div class="col-3">
-                    <img src="#" alt="" />
-                  </div>
+                  
+                  
+                    <img class="forcast-icon col-3" src="http://openweathermap.org/img/wn/${
+                      forecastDay.weather[0].icon
+                    }@2x.png" alt=""  />
+                    
+                  
                   <div class="col-6">
-                    <span id="max-temp">10°</span>
-                    <span id="min-temp">3°</span>
+                    <span id="max-temp">${Math.round(
+                      forecastDay.temp.max
+                    )}°</span>
+                    <span id="min-temp">${Math.round(
+                      forecastDay.temp.min
+                    )}°</span>
                     <span class="forcast-units">
                       <a href="#" id="forcast-celcius">C</a>|<a
                         href="#"
@@ -53,9 +67,10 @@ function displayForcast(response) {
                     </span>
                   </div>
                 </div>`;
+    }
   });
-
-  forcastElement.innerHTML = forcastHTML + `</div>`;
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 function getForcast(coordinates) {
   let apiKey = "66af35db472b0f6b03a390f971759004";
