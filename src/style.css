@@ -81,11 +81,11 @@ a:hover {
   opacity: 0.5;
 }
 
-.container.main {
+/* .container.main {
   background-repeat: no-repeat;
   border-radius: 20px 8px;
   margin-top: -33px;
-}
+} */
 .weather-app-wrapper {
   max-width: 1200px;
   margin: 30px auto;
@@ -105,20 +105,26 @@ a:hover {
   font-size: large;
 }
 .col.main-city {
-  margin-top: 230px;
+  margin-top: 310px;
 }
 .main-city {
   margin: -10px 16px;
 }
 .box {
+  color: rgb(0, 0, 0);
+
   border: none;
+
   border-radius: 20px 4px;
+
   padding: 25px 20px 38px 20px;
   margin: 10px 20px 15px 10px;
   text-align: center;
+  position: relative;
   background: rgba(255, 255, 255, 0.9);
   transition: all 200ms ease-in-out;
 }
+
 .box:hover {
   background: radial-gradient(
     circle at 50.3% 44.5%,
@@ -134,8 +140,10 @@ a:hover {
 }
 .forcast-units a:hover {
   color: black;
+
   opacity: 0.6;
 }
+
 .search-btn {
   background: rgba(255, 255, 255, 0.9);
   color: black;
@@ -148,6 +156,7 @@ a:hover {
 .search-btn:hover {
   opacity: 0.8;
 }
+
 .col-8.srch-bar {
   margin: 0 10px;
 }
@@ -160,38 +169,7 @@ a:hover {
 .bi.bi-b.rightness-high {
   transition: all 200ms ease-in-out;
 }
-/* .box.next-day-2:hover {
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgb(255, 197, 61) 0%,
-    rgb(255, 94, 7) 90%
-  );
-} */
-/* .box.forcast:hover {
-  background: radial-gradient(
-    circle at 50.3% 44.5%,
-    rgb(116, 147, 179) 0%,
-    rgb(62, 83, 104) 100.2%
-  );
-} */
-/* .box.next-day-3:hover {
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgb(215, 223, 252) 0%,
-    rgb(255, 255, 255) 0%,
-    rgb(215, 223, 252) 84%
-  );
-}
-.box.next-day-4:hover {
-  background: linear-gradient(-225deg, #5d9fff 0%, #b8dcff 48%, #6bbbff 100%);
-}
-.box.next-day-5:hover {
-  background: radial-gradient(
-    circle at 50.3% 44.5%,
-    rgb(116, 147, 179) 0%,
-    rgb(62, 83, 104) 100.2%
-  );
-} */
+
 .weather-temperature .active {
   color: aliceblue;
   opacity: 0.5;
