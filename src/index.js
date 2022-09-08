@@ -79,6 +79,7 @@ function showDefaultCity(response) {
   let tempElement = document.querySelector("#main-temp");
   let dafuatlTempC = Math.round(celciusTemperature);
   tempElement.innerHTML = dafuatlTempC;
+
   let defaultHumidity = document.querySelector("#humidity");
   let humidity = response.data.main.humidity;
   defaultHumidity.innerHTML = humidity;
