@@ -28,7 +28,6 @@ function formatForcastDays(timestamp) {
 }
 
 function displayForcast(response) {
-  console.log(response.data.daily);
   let dailyForecast = response.data.daily;
   let forecastElement = document.querySelector("#forcast");
   let forecastHTML = `<div>`;
@@ -58,13 +57,6 @@ function displayForcast(response) {
                     <span id="min-temp">${Math.round(
                       forecastDay.temp.min
                     )}°</span>
-                    <span class="forcast-units">
-                      <a href="#" id="forcast-celcius">C</a>|<a
-                        href="#"
-                        id="forcast-farenheit"
-                        >F</a
-                      >
-                    </span>
                   </div>
                 </div>`;
     }
@@ -75,10 +67,11 @@ function displayForcast(response) {
 function getForcast(coordinates) {
   let apiKey = "66af35db472b0f6b03a390f971759004";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
+
   axios.get(apiUrl).then(displayForcast);
 }
 function showDefaultCity(response) {
+  console.log(response);
   let defaultCity = document.querySelector("#main-city");
   let city = response.data.name;
   defaultCity.innerHTML = city;
@@ -157,7 +150,7 @@ function showMainTemp(response) {
   let defaultTemperature = document.querySelector("#main-temp");
   defaultTemperature.innerHTML = mainTemperature;
   let defaultCity = document.querySelector("#main-city");
-  defaultCity.innerHTML = "Shiraz";
+  defaultCity.innerHTML = response.data.main.name;
   let humidityElement = response.data.main.humidity;
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = humidityElement;

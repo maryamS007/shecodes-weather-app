@@ -31,14 +31,14 @@ h5 {
 }
 h6 {
   text-align: center;
-  color: black;
+  color: aliceblue;
   font-weight: bold;
 }
 h6 a {
-  color: black;
+  color: aliceblue;
 }
 h6 a:hover {
-  color: black;
+  color: aliceblue;
   opacity: 0.6;
 }
 p {
@@ -57,7 +57,7 @@ button {
   color: black;
   border-radius: 20px 4px;
   border: none;
-  padding: 6px 30px;
+  padding: 6px 20px;
   margin: 20px 0px 20px 15px;
   transition: all 200ms ease-in-out;
   display: inline;
@@ -145,14 +145,7 @@ a:hover {
   padding: 0;
   position: relative;
   top: -13px;
-}
-.forcast-units a {
-  color: black;
-}
-.forcast-units a:hover {
-  color: black;
-
-  opacity: 0.6;
+  left: 13px;
 }
 
 .search-btn {
