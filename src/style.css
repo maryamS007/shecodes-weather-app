@@ -1,6 +1,7 @@
 body {
   font-family: monospace;
 }
+
 h1,
 h3,
 a,
@@ -45,28 +46,11 @@ p {
   line-height: 2;
   font-size: 18px;
   font-weight: bolder;
-  margin-right: 20px;
+  margin-right: 35px;
 
   padding-left: 0;
   text-align: center;
   font-weight: bold;
-}
-
-button {
-  background: rgba(255, 255, 255, 0.9);
-  color: black;
-  border-radius: 20px 4px;
-  border: none;
-  padding: 6px 20px;
-  margin: 20px 0px 20px 15px;
-  transition: all 200ms ease-in-out;
-  display: inline;
-}
-.button {
-  padding: 0px 0px;
-}
-.button:hover {
-  opacity: 0.8;
 }
 
 .degree-link {
@@ -76,7 +60,7 @@ button {
   left: -30px;
 }
 
-a:hover {
+.weather-temperature a:hover {
   color: aliceblue;
   opacity: 0.5;
 }
@@ -92,24 +76,27 @@ a:hover {
 }
 
 .background-img {
-  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/040/979/original/rain.jpeg?1658228700);
+  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/045/874/original/artyom-kulikov-5t4isI9DNzc-unsplash.jpeg?1662755067);
+
   background-size: 100%;
   background-repeat: no-repeat;
   border-radius: 8px;
   box-shadow: -5px 5px 50px 5px rgba(0, 0, 0, 0.2);
   margin-top: 40px;
 }
+
 .main-temp-description {
   color: aliceblue;
   font-weight: bold;
   font-size: large;
 }
 .col.main-city {
-  margin-top: 260px;
+  margin-top: 330px;
 }
 .main-city {
   margin: -10px 16px;
 }
+
 .forcast-icon {
   margin: 0 auto;
   padding: 0 auto;
@@ -117,28 +104,53 @@ a:hover {
   top: -10;
 }
 .box {
-  color: rgb(0, 0, 0);
+  color: black;
   border: none;
-  border-radius: 20px 4px;
+  border-radius: 20px 8px;
   padding: 25px 20px 38px 20px;
-  margin: 10px 20px 15px 10px;
+  margin: 10px 30px 25px 0px;
   text-align: center;
   position: relative;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.5);
   transition: all 200ms ease-in-out;
   max-height: 77px;
+  font-size: larger;
+  font-weight: 900px;
 }
-
 .box:hover {
-  background: radial-gradient(
-    circle at 50.3% 44.5%,
-    rgb(116, 147, 179) 0%,
-    rgb(62, 83, 104) 100.2%
-  );
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
 }
+.box::before,
+.box::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: inherit;
+  transition: 0.5s ease;
+}
+.box::before {
+  left: -8px;
+  top: -8px;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-width: 3px 0 0 3px;
+  border-radius: 20px 4px;
+}
+.box::after {
+  right: -8px;
+  bottom: -8px;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-width: 0 3px 3px 0;
+  border-radius: 20px 4px;
+}
+.box:hover::after,
+.box:hover::before {
+  width: calc(100% + 15px);
+  height: calc(100% + 15px);
+}
+
 .forcast-icon {
   width: 55px;
   margin: 0 auto;
@@ -147,36 +159,173 @@ a:hover {
   top: -13px;
   left: 13px;
 }
+.srch-bar {
+  margin: 0px 20px;
+}
+.srch-input {
+  outline: none;
+  border: 3px solid aliceblue;
+  background: none;
+  color: aliceblue;
+  line-height: 1.5;
+  height: 55%;
+  width: 100%;
+  font-size: x-large;
+}
+.srch-input::placeholder {
+  color: rgb(230, 243, 255);
+  font-size: inherit;
+}
 
-.search-btn {
-  background: rgba(255, 255, 255, 0.9);
+.search-btn,
+.bttnn {
+  outline: none;
   color: black;
-  border-radius: 20px 4px;
+  padding: 6px 20px;
+  margin: 20px 20px 20px;
+  text-decoration: transparent;
+  background: rgba(255, 255, 255, 0.5);
+  /* border: 2px solid rgba(255, 255, 255, 0.5); */
   border: none;
-  padding: 6px 30px;
-  margin: 20px 0px 20px 40px;
-  transition: all 200ms ease-in-out;
-}
-.search-btn:hover {
-  opacity: 0.8;
+  border-radius: 8px 0px;
+  position: relative;
 }
 
-.col-8.srch-bar {
-  margin: 0 10px;
+.search-btn::before,
+.search-btn::after,
+.bttnn::before,
+.bttnn::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: inherit;
+  transition: 0.4s ease-in-out;
 }
-.form-control.mt-3 {
+.search-btn::before,
+.bttnn::before {
+  left: -8px;
+  top: -8px;
+  border: 4px solid rgba(255, 255, 255, 0.4);
+  border-width: 2px 0 0 2px;
+  border-radius: 8px 0px;
+}
+.search-btn::after,
+.bttnn::after {
+  right: -8px;
+  bottom: -8px;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-width: 0 2px 2px 0;
+  border-radius: 8px 0px;
+}
+.search-btn:hover::after,
+.search-btn:hover::before,
+.bttnn::before,
+.bttnn::after {
+  width: calc(100% + 25px);
+  height: calc(100% + 25px);
+}
+
+.form-control {
   padding: 10px 15px;
-  border-radius: 4px 20px;
+  border-radius: 20px 8px;
   border: none;
-  background: rgba(255, 255, 255, 0.9);
-}
-.bi.bi-b.rightness-high {
-  transition: all 200ms ease-in-out;
+  background: rgba(255, 255, 255, 0.5);
 }
 
+.min-temp {
+  color: black;
+  opacity: 0.7;
+  font-size: 17px;
+  font-weight: 400;
+}
 .weather-temperature .active {
   color: aliceblue;
   opacity: 0.5;
   text-decoration: none;
   cursor: default;
+}
+
+.social-icons {
+  display: block;
+  text-align: center;
+  padding-bottom: 6px;
+}
+.social-link {
+  padding: 0px 15px 15px 15px;
+  font-size: 22px;
+}
+.social-link:hover::before {
+  opacity: 0.6;
+}
+.social-link:nth-child(1)::before {
+  background: linear-gradient(
+    107deg,
+    rgb(255, 67, 5) 11.1%,
+    rgb(245, 135, 0) 95.3%
+  );
+}
+.social-link:nth-child(2)::before {
+  background: #ba68c8;
+}
+.social-link:nth-child(3)::before {
+  background: #3d8ee0;
+}
+.social-link:hover::before {
+  transform: translate(-4px, -4px);
+  filter: blur(10px);
+}
+.social-link i {
+  font-size: 45px;
+  transition: all 0.4s;
+}
+.social-link:hover i {
+  color: aliceblue;
+  transform: rotate(45deg);
+}
+.social-link:hover i.instagram {
+  background: -webkit-linear-gradient(
+    107deg,
+    rgb(255, 67, 5) 11.1%,
+    rgb(245, 135, 0) 95.3%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.social-link:hover i.linkedin {
+  color: #3d8ee0;
+}
+.social-link:hover i.github {
+  color: #ba68c8;
+}
+.percipitation {
+  border-radius: 20px 4px;
+  border: 3px solid aliceblue;
+  position: relative;
+}
+.percipitation::before,
+.percipitation::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: inherit;
+  transition: 0.5s ease;
+}
+.percipitation::before {
+  left: -12px;
+  top: -12px;
+  border-width: 3px 0 0 3px;
+  border-radius: 20px 4px;
+}
+.percipitation::after {
+  right: -12px;
+  bottom: -12px;
+  border-width: 0 3px 3px 0;
+  border-radius: 20px 4px;
+}
+.percipitation:hover::after,
+.percipitation:hover::before {
+  width: calc(100% + 35px);
+  height: calc(100% + 35px);
 }
