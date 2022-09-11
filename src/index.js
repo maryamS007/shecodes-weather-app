@@ -1,3 +1,4 @@
+// time stamp
 function formatDate(timestamp) {
   let now = new Date(timestamp);
   let hours = now.getHours();
@@ -20,6 +21,7 @@ function formatDate(timestamp) {
   return `${weekDays[now.getDay()]}, ${hours}:${minutes} `;
 }
 
+// Forcast Info
 function formatForcastDays(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -70,6 +72,8 @@ function getForcast(coordinates) {
 
   axios.get(apiUrl).then(displayForcast);
 }
+
+// default city
 function showDefaultCity(response) {
   console.log(response);
   let defaultCity = document.querySelector("#main-city");
@@ -106,6 +110,7 @@ let apiUrl = `${apiProtocal}q=${city}&appid=${apiKey}&units=${units}`;
 
 axios.get(apiUrl).then(showDefaultCity);
 
+// search input city
 function showTypedCityTemp(response) {
   let tempElement = document.querySelector("#main-temp");
   celciusTemperature = response.data.main.temp;
@@ -144,6 +149,7 @@ function showTypedCity(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", showTypedCity);
 
+// current location button
 function showMainTemp(response) {
   celciusTemperature = response.data.main.temp;
   let tempElement = celciusTemperature;
@@ -187,6 +193,7 @@ function showCurrentPosition() {
 let button = document.querySelector("#current-loc");
 button.addEventListener("click", showCurrentPosition);
 
+// unit conversion
 function showFarenheitTemp(event) {
   event.preventDefault();
   let farenheitTemperature = (celciusTemperature * 9) / 5 + 32;
