@@ -25,8 +25,6 @@ h3 {
   font-size: 73px;
 }
 h5 {
-  margin-top: -6px;
-
   font-size: 20px;
   font-weight: 900;
 }
@@ -76,8 +74,7 @@ p {
 }
 
 .background-img {
-  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/045/986/original/brynden-17mCCnpomC4-unsplash.jpeg?1662843820);
-
+  background: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/045/986/original/brynden-17mCCnpomC4-unsplash.jpeg?1662843820);
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 8px;
@@ -161,23 +158,45 @@ p {
   top: -13px;
   left: 13px;
 }
+.search-input {
+  position: relative;
+}
+.search-input::before,
+.search-input::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: inherit;
+}
+.search-input::before {
+  left: -8px;
+  top: -8px;
+  border: 4px solid rgba(222, 192, 203, 0.5);
+  border-width: 2px 0 0 2px;
+  border-radius: 20px 0px;
+}
+.search-input::after {
+  right: -8px;
+  bottom: -8px;
+  border: 4px solid rgba(222, 192, 203, 0.5);
+  border-width: 0px 2px 2px 0px;
+  border-radius: 20px 0px;
+}
+.form-control {
+  padding: 10px 15px;
+  border-radius: 20px 8px;
+  border: none;
+  background: rgba(78, 73, 97, 0.4);
+  border: 2px solid rgba(222, 192, 203, 0.5);
+}
+.form-control::placeholder {
+  color: white;
+}
 .srch-bar {
   margin: 0px 20px;
 }
-.srch-input {
-  outline: none;
-  border: 3px solid aliceblue;
-  background: none;
-  color: aliceblue;
-  line-height: 1.5;
-  height: 55%;
-  width: 100%;
-  font-size: x-large;
-}
-.srch-input::placeholder {
-  color: rgb(230, 243, 255);
-  font-size: inherit;
-}
+
 .search-btn {
   /* outline: none; */
   color: aliceblue;
@@ -222,13 +241,6 @@ p {
 .search-btn:hover::before {
   width: calc(100% + 25px);
   height: calc(100% + 25px);
-}
-
-.form-control {
-  padding: 10px 15px;
-  border-radius: 20px 8px;
-  border: none;
-  background: rgba(255, 255, 255, 0.5);
 }
 
 .min-temp {

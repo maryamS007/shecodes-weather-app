@@ -110,7 +110,7 @@ let apiUrl = `${apiProtocal}q=${city}&appid=${apiKey}&units=${units}`;
 
 axios.get(apiUrl).then(showDefaultCity);
 
-// search input city
+// search-input city
 function showTypedCityTemp(response) {
   let tempElement = document.querySelector("#main-temp");
   celciusTemperature = response.data.main.temp;
@@ -131,7 +131,23 @@ function showTypedCityTemp(response) {
   );
   let descriptionElement = document.querySelector("#main-temp-description");
   descriptionElement.innerHTML = response.data.weather[0].description;
+  changeBackgroundImage(response.data.weather[0].icon);
   getForcast(response.data.coord);
+}
+// Background image Change
+function changeBackgroundImage(response) {
+  let clearSkyDay = "01d";
+  let clearSkyNight = "01n";
+  let clouds = ["02d", "02n", "03d", "03n", "04d", "04n"];
+  let rain = ["09d", "09n", "10d", "10n"];
+  let storm = ["11d", "11n"];
+  let snow = ["13n", "13d"];
+  let mist = ["50d", "50n"];
+  if (response === clearSkyDay) {
+    document.getElementsByClassName(".background-img").style.background = url(
+      "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/046/007/original/mist.jpeg?1662886608"
+    );
+  }
 }
 function showTypedCity(event) {
   event.preventDefault();
@@ -157,7 +173,7 @@ function showMainTemp(response) {
   let defaultTemperature = document.querySelector("#main-temp");
   defaultTemperature.innerHTML = mainTemperature;
   let defaultCity = document.querySelector("#main-city");
-  defaultCity.innerHTML = response.data.main.name;
+  defaultCity.innerHTML = response.data.name;
   let humidityElement = response.data.main.humidity;
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = humidityElement;
