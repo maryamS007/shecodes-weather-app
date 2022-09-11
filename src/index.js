@@ -140,7 +140,9 @@ function showTypedCity(event) {
   let searchInput = document.querySelector("#search-input");
   let mainCity = document.querySelector("#main-city");
   let city = searchInput.value;
+
   mainCity.innerHTML = `${city}`;
+
   let apiKey = "66af35db472b0f6b03a390f971759004";
   let apiProtocal = "https://api.openweathermap.org/data/2.5/weather?";
   let units = "metric";
