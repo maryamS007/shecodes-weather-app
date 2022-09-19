@@ -21,6 +21,46 @@ function formatDate(timestamp) {
   return `${weekDays[now.getDay()]}, ${hours}:${minutes} `;
 }
 
+// change background image
+// function changeBackgroundImage(icon) {
+//   let clearSkyDay = "01d";
+//   let clearSkyNight = "01n";
+//   let clouds = ["02d", "02n", "03d", "03n", "04d", "04n"];
+//   let rain = ["09d", "09n", "10d", "10n"];
+//   let storm = ["11d", "11n"];
+//   let snow = ["13n", "13d"];
+//   let mist = ["50d", "50n"];
+//   if (clearSkyDay.includes(icon)) {
+//     document.querySelector(".background-img").style.background = `url(
+//       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/046/092/original/cleardkyday.jpeg?1662993777"
+//     )`;
+//   } else if (clearSkyNight.includes(icon)) {
+//     document.querySelector(".background-img").style.background = `url(
+//       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/046/086/original/clearskynight.jpeg?1662992045"
+//     )`;
+//   } else if (clouds.includes(icon)) {
+//     document.querySelector(".background-img").style.background = `url(
+//       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/045/986/original/brynden-17mCCnpomC4-unsplash.jpeg?1662843820"
+//     )`;
+//   } else if (rain.includes(icon)) {
+//     document.querySelector(".background-img").style.background = `url(
+//       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/045/874/original/artyom-kulikov-5t4isI9DNzc-unsplash.jpeg?1662755067"
+//     )`;
+//   } else if (storm.includes(icon)) {
+//     document.querySelector(".background-img").style.background = `url(
+//       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/046/007/original/mist.jpeg?1662886608"
+//     )`;
+//   } else if (snow.includes(icon)) {
+//     document.querySelector(".background-img").style.background = `url(
+//       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/045/875/original/aditya-vyas-PzhmEp_aDU4-unsplash.jpeg?1662755109"
+//     )`;
+//   } else if (mist.includes(icon)) {
+//     document.querySelector(".background-img").style.background = `url(
+//       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/046/007/original/mist.jpeg?1662886608"
+//     )`;
+//   }
+// }
+
 // Forcast Info
 function formatForcastDays(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -99,7 +139,6 @@ function showDefaultCity(response) {
   );
   let descriptionElement = document.querySelector("#main-temp-description");
   descriptionElement.innerHTML = response.data.weather[0].description;
-
   getForcast(response.data.coord);
 }
 let apiKey = "66af35db472b0f6b03a390f971759004";
@@ -177,6 +216,8 @@ function showMainTemp(response) {
   );
   let descriptionElement = document.querySelector("#main-temp-description");
   descriptionElement.innerHTML = response.data.weather[0].description;
+
+  // changeBackgroundImage(response.data.weather[0].icon);
   getForcast(response.data.coord);
 }
 
